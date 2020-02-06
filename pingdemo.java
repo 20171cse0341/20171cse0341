@@ -2,9 +2,9 @@ import java.io.*;
 import java.net.*;
 class pingdemo
 {
-public static void main(Stringargs[])
+public static void main(String args[])
 {
-BufferdReader in;
+BufferedReader in;
 try
 {
 Runtime r=Runtime.getRuntime();
@@ -13,7 +13,7 @@ if(p==null)
 System.out.println("could not connect");
 in=new BufferedReader(new InputStreamReader(p.getInputStream()));
 String line;
-while(line=in.readLine())!=null)
+while((line=in.readLine())!=null)
 {
 if(line.startsWith("reply"))
 System.out.println("this is not reply");
@@ -24,10 +24,10 @@ System.out.println("destinator host unreached");
 else
 System.out.println(line);
 }
-System.out.printlm(in.readLine());
+System.out.println(in.readLine());
 in.close();
 }
-catch(IOExeception e)
+catch(IOException e)
 {
 System.out.println(e.toString());
 }
